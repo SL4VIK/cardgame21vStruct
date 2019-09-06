@@ -34,6 +34,7 @@ namespace cardgame21vStruct
             PointsPlayer1 += cards[index];
             Console.WriteLine($"You took card {cards[index]}");
             index++;
+            Console.WriteLine($"Your summa = {PointsPlayer1} of 21 ");
         }
         public void TakeP2()
         {
