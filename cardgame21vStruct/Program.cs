@@ -165,7 +165,6 @@ namespace cardgame21vStruct
                     Console.ReadKey();
                     BJ.MoreP2();
                     BJ.MorePlayer1 = "1";
-                    string MorePlayer1 = "1";
                     BJ.MoreP1();
                     BJ.Comparison2();
                 }
