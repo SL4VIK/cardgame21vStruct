@@ -27,7 +27,6 @@ namespace cardgame21vStruct
         public void TakeP1()
         {
             int PointsPlayer1 = 0;
-            Console.ReadKey();
             PointsPlayer1 += cards[index];
             Console.WriteLine($"You took card {cards[index]}");
             index++;
@@ -131,6 +130,7 @@ namespace cardgame21vStruct
         static void Main(string[] args)
         {
             Game BJ = new Game();
+            Cards Game1 = new Cards();
             BJ.index = 0;
             BJ.cards = new int[36] { 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 11, 11, 11, 11 };
             BJ.PointsPlayer1 = 0;
