@@ -9,21 +9,11 @@ namespace cardgame21vStruct
     struct Game
     {
         public int index;
-        public int[] cards;
+        public Card[] cards;
         public int PointsPlayer1;
         public int PointsPlayer2;
         public string MorePlayer1;
-        public void Sort()
-        {
-            Random random = new Random();
-            for (int i = cards.Length - 1; i >= 0; i--)
-            {
-                int j = random.Next(i + 1);
-                var temp = cards[j];
-                cards[j] = cards[i];
-                cards[i] = temp;
-            }
-        }
+        
         public void TakeP1()
         {
             int PointsPlayer1 = 0;
@@ -132,10 +122,10 @@ namespace cardgame21vStruct
             Game BJ = new Game();
             Cards Game1 = new Cards();
             BJ.index = 0;
-            BJ.cards = new int[36] { 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 11, 11, 11, 11 };
+            BJ.cards = Game1.Deck();
             BJ.PointsPlayer1 = 0;
             BJ.PointsPlayer2 = 0;
-            BJ.Sort();
+            Game1.Sort();
             string NewGame = "1";
             Random Player = new Random();
             while (NewGame == "1")
