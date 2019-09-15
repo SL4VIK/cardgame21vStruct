@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cardgame21vStruct
+namespace CardGame21vStr
 {
     struct Game
     {
@@ -26,7 +26,6 @@ namespace cardgame21vStruct
         }
         public void TakeP1()
         {
-            int PointsPlayer1 = 0;
             Console.ReadKey();
             PointsPlayer1 += cards[index];
             Console.WriteLine($"You took card {cards[index]}");
@@ -38,7 +37,6 @@ namespace cardgame21vStruct
         }
         public void TakeP2()
         {
-            int PointsPlayer2 = 0;
             PointsPlayer2 += cards[index];
             index++;
             PointsPlayer2 += cards[index];
@@ -76,7 +74,6 @@ namespace cardgame21vStruct
                 }
                 if (MorePlayer1 == "1")
                 {
-
                     PointsPlayer1 += cards[index];
                     index++;
                     if (PointsPlayer1 > 21)
