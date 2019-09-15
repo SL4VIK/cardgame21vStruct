@@ -9,14 +9,25 @@ namespace cardgame21vStruct
     struct Game
     {
         public int index;
-        public Card[] cards;
+        public int[] cards;
         public int PointsPlayer1;
         public int PointsPlayer2;
         public string MorePlayer1;
-        
+        public void Sort()
+        {
+            Random random = new Random();
+            for (int i = cards.Length - 1; i >= 0; i--)
+            {
+                int j = random.Next(i + 1);
+                var temp = cards[j];
+                cards[j] = cards[i];
+                cards[i] = temp;
+            }
+        }
         public void TakeP1()
         {
             int PointsPlayer1 = 0;
+            Console.ReadKey();
             PointsPlayer1 += cards[index];
             Console.WriteLine($"You took card {cards[index]}");
             index++;
@@ -120,12 +131,11 @@ namespace cardgame21vStruct
         static void Main(string[] args)
         {
             Game BJ = new Game();
-            Cards Game1 = new Cards();
             BJ.index = 0;
-            BJ.cards = Game1.Deck();
+            BJ.cards = new int[36] { 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 11, 11, 11, 11 };
             BJ.PointsPlayer1 = 0;
             BJ.PointsPlayer2 = 0;
-            Game1.Sort();
+            BJ.Sort();
             string NewGame = "1";
             Random Player = new Random();
             while (NewGame == "1")
@@ -135,11 +145,9 @@ namespace cardgame21vStruct
                 {
 
                     Console.WriteLine("You take cards first");
-                    Console.ReadKey();
                     BJ.TakeP1();
                     BJ.TakeP2();
                     BJ.Comparison();
-                    Console.ReadKey();
                     BJ.MorePlayer1 = "1";
                     BJ.MoreP1();
                     BJ.MoreP2();
@@ -148,11 +156,9 @@ namespace cardgame21vStruct
                 else
                 {
                     Console.WriteLine("Computer take cards first");
-                    Console.ReadKey();
                     BJ.TakeP2();
                     BJ.TakeP1();
                     BJ.Comparison();
-                    Console.ReadKey();
                     BJ.MoreP2();
                     BJ.MorePlayer1 = "1";
                     BJ.MoreP1();
@@ -168,7 +174,7 @@ namespace cardgame21vStruct
                         break;
                     }
                 }
-                
+
             }
         }
     }
